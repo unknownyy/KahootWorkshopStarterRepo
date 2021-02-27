@@ -2,7 +2,7 @@
 const Kahoot = require("kahoot.js-updated");
 const client = new Kahoot();
 
-client.join('04182685', Math.random() + "- You");
+client.join('08234544', Math.random() + "- YY");
 
 client.on("QuizStart", () => {
   console.log("The quiz has started!");
@@ -13,10 +13,7 @@ client.on("QuizEnd", () => {
 });
 
 client.on("QuestionStart", question => {
-  console.log("New question!");
-  console.log(question.question);
-  console.log("Answering Option A, I don't even know what it is!");
-  question.answer(0);
+  question.answer(verifyProperty(question.choices,"correct"));
 });
 
 function verifyProperty(array, property) {
